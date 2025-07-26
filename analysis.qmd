@@ -31,6 +31,8 @@ x <- ces |>
   mutate(ideology = fct_drop(ideology))
 ```
 ```{r}
+#| message: false
+#| warning: false
 #| cache : true 
 fit_approval <- polr(approval ~ ideology + education,
                       data = x)
@@ -44,6 +46,8 @@ fit_approval |>
 
 
 ```{r}
+#| message: false
+#| warning: false
 x |> 
   ggplot(aes(x = ideology, fill = approval)) +
   geom_bar() +
